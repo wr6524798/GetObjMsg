@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "NSObject+WRExtension.h"
+#import "WRInfo.h"
 
 @interface ViewController ()
 
@@ -29,6 +30,18 @@
     
     // 获得协议列表
     [self getProtocalList];
+    
+    WRInfo *info = [[WRInfo alloc] init];
+    info.name = @"WR";
+    info.age = @"20";
+
+    NSLog(@"%@",info);
+    
+//    重写打印信息前：<WRInfo: 0x7fc712763ee0>
+//    重写打印信息后：<WRInfo: 0x7f9ae15a1780> = {
+//                  _name = WR;
+//                  _age = 20;
+//                  }
 }
 
 - (void)didReceiveMemoryWarning {
